@@ -1,5 +1,11 @@
 # workshop-raccoon-cv
 
+
+
+### KUKA prc example files
+[example_robot_programming_in_Rhino](https://drive.google.com/file/d/1kzzR0gK_d3wgkkV1yESv7XUb84CfU9Pq/view?usp=sharing)
+
+
 ### ROS Setup
 ```
 mkdir -p catkin_ws/src
