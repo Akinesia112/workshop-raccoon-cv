@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+    <robot name="rccn_west_robot" xmlns:xacro="https://ros.org/wiki/xacro">
+        <link name="kuka_robot_cell_world">
+            <visual>
+                <geometry>
+                    <mesh filename="package://rccn_kuka_robot_cell/meshes/world/visual/robot_cell_fixture.stl"/>
+                </geometry>
+                <material name="">
+                    <color rgba="1.0 1.0 1.0 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://rccn_kuka_robot_cell/meshes/world/collision/robot_cell_fixture.stl"/>
+                </geometry>
+            </collision>
+        </link>
+        
+        <!--KUKA West Robot-->
+        <xacro:property name="west_prefix" value="west_" />
+        <xacro:include filename="$(find rccn_kuka_robot_cell)/urdf/rccn_west_robot_macro.xacro"/>
+        <xacro:rccn_west_robot prefix=""/>
+        <joint name="${west_prefix}world_joint" type="fixed">
+            <parent link="kuka_robot_cell_world" />
+            <child link="west_e1_rail" />
+            <origin xyz="0.03750000 2.40330000 -0.00200000" rpy="0.00000000 0.00000000 0.00316232" />
+        </joint>
+
+    </robot>

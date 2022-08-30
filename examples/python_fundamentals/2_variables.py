@@ -5,10 +5,12 @@
 # Comments in Python start with the hash character, #, and extend to the end of the physical line.
 
 # Declare and assign values to variables with "="
+
 width = 10
 height = 9
 
 print(width * height)
 
 print(area)
+
 # print(for)

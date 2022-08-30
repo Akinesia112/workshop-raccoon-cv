@@ -3,7 +3,7 @@ import compas.geometry as cg
 
 
 # Point
-point  = cg.Point(10, 10, 10)
+point = cg.Point(10, 10, 10)
 
 
 # ==============================================================================
