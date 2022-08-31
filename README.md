@@ -8,7 +8,7 @@
 
 ### ROS Setup
 ```
-
+sudo apt install ros-noetic-rosbridge-server ros-noetic-ros-controllers ros-noetic-ros-control
 mkdir -p catkin_ws/src
 cd catkin_ws/src
 git clone https://github.com/rccn-dev/compas_fab_backend.git
