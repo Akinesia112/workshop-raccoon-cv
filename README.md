@@ -7,6 +7,9 @@
 
 
 ### ROS Setup
+#### Ubuntu 20.04.6 LTS install of ROS Noetic
+https://wiki.ros.org/noetic/Installation/Ubuntu
+
 ```
 sudo apt install ros-noetic-rosbridge-server ros-noetic-ros-controllers ros-noetic-ros-control
 mkdir -p catkin_ws/src
@@ -19,4 +22,14 @@ git clone https://github.com/rccn-dev/rccn_robot_cell.git
 # Official packages
 git clone https://github.com/ros-planning/moveit_calibration.git
 git clone https://github.com/introlab/rtabmap_ros.git
+cd catkin_ws/src
+rosdep install -y --from-paths . --ignore-src --rosdistro noetic
+cd ..
+catkin_make
+source devel/setup.bash
+roslaunch rccn_east_robot_moveit_config demo.launch
 ```
+  
+  ![image](rviz_open.PNG)   
+
+  * rviz open
