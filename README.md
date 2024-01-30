@@ -29,7 +29,8 @@ catkin_make
 source devel/setup.bash
 roslaunch rccn_east_robot_moveit_config demo.launch
 ```
-  
-  ![image](rviz_open.PNG)   
 
-  * rviz open
+
+![image](assets/rviz_open.png)   
+
+* rviz open
