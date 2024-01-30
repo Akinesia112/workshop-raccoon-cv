@@ -30,6 +30,6 @@ source devel/setup.bash
 roslaunch rccn_east_robot_moveit_config demo.launch
 ```
   
-  ![image](rviz_open.PNG)   
+  ![image](rviz_open.png)   
 
   * rviz open
