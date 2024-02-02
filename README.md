@@ -65,13 +65,13 @@ n76104052@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.
 or
 
 roslaunch realsense2_camera rs_camera.launch color_width:=800 color_height:=600 color_fps:=15 camera:=cam_0 serial_no:=025222073397
-'''
+```
 
 #### PC
 
 ```
 rosrun rqt_image_view rqt_image_view  #Read the screen from camera
-'''
+```
 
 Calibration parameters adjustment such as the example in pictures (you should measure the ArUco Markers in the physical environment), setting sensor configuration: Eye-in-hand and and frame selection, sampling 20 different camera poses by moving KUKA manually. Save Camera Pose.
 
@@ -86,7 +86,7 @@ If you want to start the camera node and align the depth stream to other availab
 
 ```
 n76104052@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch color_width:=1280 color_height:=720 color_fps:=15 camera:=cam_0 serial_no:=025222073397 align_depth:=true
-'''
+```
 
 #### ROS Core
 Make sure roscore always running.
