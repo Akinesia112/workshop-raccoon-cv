@@ -61,9 +61,11 @@ roslaunch rccn_east_robot_kvp_moveit_config demo.launch #Make sure connected wit
 
 ```
 n76104052@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch 
+```
 
 or
 
+```
 roslaunch realsense2_camera rs_camera.launch color_width:=800 color_height:=600 color_fps:=15 camera:=cam_0 serial_no:=025222073397
 ```
 
@@ -129,8 +131,10 @@ raccoon_admin@Ubuntu-Seney:~/Projects/raccoon_cv/catkin_ws_test$ roslaunch rccn_
 
 ### Utilizing the KUKA teach pendant in the scanning process
 
-```
 Control+C to stop:
+
+```
+
 raccoon_admin@Ubuntu-Seney:~/Projects/raccoon_cv/catkin_ws_test$ roslaunch rccn_east_robot_kvp_moveit_config robot_scan.launch
 ```
 
