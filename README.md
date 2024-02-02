@@ -53,10 +53,10 @@ export ROS_MASTER_URI=http://192.168.1.113:11311
 cd catkin_ws
 source devel/setup.bash
 
-roslaunch rccn_east_robot_kvp_moveit_config demo.launch #Make sure connected with Kuka
+roslaunch rccn_east_robot_kvp_moveit_config demo.launch #Make sure connected with KUKA
 ```
 
-### 3. Kuka Moveit Calibration
+### 3. KUKA Moveit Calibration
 #### Open camera in NUC IP
 
 ```
