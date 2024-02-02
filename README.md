@@ -35,18 +35,18 @@ roslaunch rccn_east_robot_moveit_config demo.launch
 
 ### 1. NUC IP Setup
 192.168.1.221
-'''
+```
 account:n76104052@192.168.1.221
 password:Ncku54107
 
 n76104052@ws-nuc-a:~/Projects/raccoon-cv$ export ROS_MASTER_URI=http://192.168.1.113:11311
 n76104052@ws-nuc-a:~/Projects/raccoon-cv$ echo $ROS_MASTER_URI 
 n76104052@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch 
-'''
+```
 
 ### 2. PC IP Setup
 
-'''
+```
 export ROS_IP:=192.168.1.113
 export ROS_MASTER_URI=http://192.168.1.113:11311
 
@@ -54,11 +54,11 @@ cd catkin_ws
 source devel/setup.bash
 
 roslaunch rccn_east_robot_kvp_moveit_config demo.launch #Make sure connected with Kuka
-'''
+```
 
 ### 3. Kuka Moveit Calibration
 #### Open camera in NUC IP
-'''
+```
 n76104052@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch 
 
 or
@@ -66,7 +66,7 @@ or
 roslaunch realsense2_camera rs_camera.launch color_width:=800 color_height:=600 color_fps:=15 camera:=cam_0 serial_no:=025222073397
 '''
 #### PC
-'''
+```
 rosrun rqt_image_view rqt_image_view  #Read the screen from camera
 '''
 Calibration parameters adjustment such as the example in pictures (you should measure the ArUco Markers in the physical environment), setting sensor configuration: Eye-in-hand and and frame selection, sampling 20 different camera poses by moving KUKA manually. Save Camera Pose.
@@ -79,15 +79,15 @@ Calibration parameters adjustment such as the example in pictures (you should me
 #### NUC
 If you want to start the camera node and align the depth stream to other available streams such as color or infra-red for point-cloud scanning, please add 'align_depth:=true'.
 
-'''
+```
 n76104052@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch color_width:=1280 color_height:=720 color_fps:=15 camera:=cam_0 serial_no:=025222073397 align_depth:=true
 '''
 #### ROS Core
 Make sure roscore always running.
 
-'''
+```
 roscore
-'''
+```
 
 ### 4. Parameters of calibration launch
 #### Getting parameters from the 'Save Camera Pose' step in the picture 'calibration_parameters'
@@ -111,17 +111,17 @@ rqt_tf_tree is a runtime tool for visualizing the tree of frames being broadcast
 * TF trees
 
 ### 5. Start the scanning
-'''
+```
 raccoon_admin@Ubuntu-Seney:~/Projects/raccoon_cv/catkin_ws_test$ roslaunch rccn_east_robot_kvp_moveit_config robot_scan.launch
 raccoon_admin@Ubuntu-Seney:~/Projects/raccoon_cv/catkin_ws_test$ roslaunch rccn_east_robot_kvp_moveit_config camera_tf.launch
 raccoon_admin@Ubuntu-Seney:~/Projects/raccoon_cv/catkin_ws_test$ roslaunch rccn_east_robot_kvp_moveit_config demo.launch
-'''
+```
 
 ### Utilizing the KUKA teach pendant in the scanning process
-'''
+```
 Control+C to stop:
 raccoon_admin@Ubuntu-Seney:~/Projects/raccoon_cv/catkin_ws_test$ roslaunch rccn_east_robot_kvp_moveit_config robot_scan.launch
-'''
+```
 And you will get:
 rtabmap: Saving database/long-term memory... (located at /home/raccoon_admin/.ros/rtabmap.db)
 rtabmap: Saving database/long-term memory...done! (located at /home/raccoon_admin/.ros/rtabmap.db, 1377 MB)
