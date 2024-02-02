@@ -58,6 +58,7 @@ roslaunch rccn_east_robot_kvp_moveit_config demo.launch #Make sure connected wit
 
 ### 3. Kuka Moveit Calibration
 #### Open camera in NUC IP
+
 ```
 n76104052@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch 
 
@@ -67,6 +68,7 @@ roslaunch realsense2_camera rs_camera.launch color_width:=800 color_height:=600 
 '''
 
 #### PC
+
 ```
 rosrun rqt_image_view rqt_image_view  #Read the screen from camera
 '''
@@ -79,6 +81,7 @@ Calibration parameters adjustment such as the example in pictures (you should me
 
 
 #### NUC
+
 If you want to start the camera node and align the depth stream to other available streams such as color or infra-red for point-cloud scanning, please add 'align_depth:=true'.
 
 ```
@@ -93,11 +96,13 @@ roscore
 ```
 
 ### 4. Parameters of calibration launch
+
 #### Getting parameters from the 'Save Camera Pose' step in the picture 'calibration_parameters'
 
 File Path: /home/raccoon_admin/Projects/raccoon_cv/catkin_ws_test/src/rccn_robot_cell/moveit_config/rccn_east_robot_kvp_moveit_config/launch/camera_tf.launch
 
 #### Modifying parameters of 'args' by opening 'camera_tf.launch'
+
 <launch>
   <!-- The rpy in the comment uses the extrinsic XYZ convention, which is the same as is used in a URDF. See
    	http://wiki.ros.org/geometry2/RotationMethods and https://en.wikipedia.org/wiki/Euler_angles for more info. -->
@@ -107,6 +112,7 @@ File Path: /home/raccoon_admin/Projects/raccoon_cv/catkin_ws_test/src/rccn_robot
 </launch>
 
 #### Check the TF_tree
+
 rqt_tf_tree is a runtime tool for visualizing the tree of frames being broadcast over ROS.
 
 ![image](assets/TF_tree.png) 
@@ -114,6 +120,7 @@ rqt_tf_tree is a runtime tool for visualizing the tree of frames being broadcast
 * TF trees
 
 ### 5. Start the scanning
+
 ```
 raccoon_admin@Ubuntu-Seney:~/Projects/raccoon_cv/catkin_ws_test$ roslaunch rccn_east_robot_kvp_moveit_config robot_scan.launch
 raccoon_admin@Ubuntu-Seney:~/Projects/raccoon_cv/catkin_ws_test$ roslaunch rccn_east_robot_kvp_moveit_config camera_tf.launch
@@ -121,11 +128,14 @@ raccoon_admin@Ubuntu-Seney:~/Projects/raccoon_cv/catkin_ws_test$ roslaunch rccn_
 ```
 
 ### Utilizing the KUKA teach pendant in the scanning process
+
 ```
 Control+C to stop:
 raccoon_admin@Ubuntu-Seney:~/Projects/raccoon_cv/catkin_ws_test$ roslaunch rccn_east_robot_kvp_moveit_config robot_scan.launch
 ```
+
 And you will get:
+
 rtabmap: Saving database/long-term memory... (located at /home/raccoon_admin/.ros/rtabmap.db)
 rtabmap: Saving database/long-term memory...done! (located at /home/raccoon_admin/.ros/rtabmap.db, 1377 MB)
 
