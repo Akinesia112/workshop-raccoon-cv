@@ -36,12 +36,10 @@ roslaunch rccn_east_robot_moveit_config demo.launch
 ### 1. NUC IP Setup
 192.168.1.221
 ```
-account:n76104052@192.168.1.221
-password:Ncku54107
 
-n76104052@ws-nuc-a:~/Projects/raccoon-cv$ export ROS_MASTER_URI=http://192.168.1.113:11311
-n76104052@ws-nuc-a:~/Projects/raccoon-cv$ echo $ROS_MASTER_URI 
-n76104052@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch 
+@ws-nuc-a:~/Projects/raccoon-cv$ export ROS_MASTER_URI=http://192.168.1.113:11311
+@ws-nuc-a:~/Projects/raccoon-cv$ echo $ROS_MASTER_URI 
+@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch 
 ```
 
 ### 2. PC IP Setup
@@ -60,7 +58,7 @@ roslaunch rccn_east_robot_kvp_moveit_config demo.launch #Make sure connected wit
 #### Open camera in NUC IP
 
 ```
-n76104052@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch 
+@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch 
 ```
 
 or
@@ -87,7 +85,7 @@ Calibration parameters adjustment such as the example in pictures (you should me
 If you want to start the camera node and align the depth stream to other available streams such as color or infra-red for point-cloud scanning, please add 'align_depth:=true'.
 
 ```
-n76104052@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch color_width:=1280 color_height:=720 color_fps:=15 camera:=cam_0 serial_no:=025222073397 align_depth:=true
+@ws-nuc-a:~/Projects/raccoon-cv$ roslaunch realsense2_camera rs_camera.launch color_width:=1280 color_height:=720 color_fps:=15 camera:=cam_0 serial_no:=025222073397 align_depth:=true
 ```
 
 #### ROS Core
